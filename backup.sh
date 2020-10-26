@@ -13,7 +13,7 @@
 #../dropbox_uploader.sh delete /"filestore_"`date --date="1 day ago" +"%Y-%m-%d"`".tar.gz"
 
 cd /home/backup/
-pg_dump dbname -U odoo > soussa.sql
+pg_dump dbname -U odoo > dbname.sql
 tar czvf "db_"`date +"%Y-%m-%d"`".tar.gz" dbname.sql
 rm dbname.sql
 rm "db_"`date --date="1 day ago" +"%Y-%m-%d"`".tar.gz"
