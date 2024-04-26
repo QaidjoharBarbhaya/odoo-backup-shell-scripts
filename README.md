@@ -28,7 +28,7 @@ https://www.dropbox.com/oauth2/authorize?token_access_type=offline&response_type
 
 Use the received code in below command:
 
-> curl https://api.dropbox.com/oauth2/token -d code=<received code> -d grant_type=authorization_code -u <App key>:<App secret>
+> curl https://api.dropbox.com/oauth2/token -d code=<received code\> -d grant_type=authorization_code -u <App key\>:<App secret\>
 
 Note the refresh token.
 
