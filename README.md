@@ -24,7 +24,7 @@ Go to https://dropbox.com/developers and configure new app. The app has the clie
 
 In web browser, paste the following url:
 
-https://www.dropbox.com/oauth2/authorize?token_access_type=offline&response_type=code&client_id=\<App key\>
+https://www.dropbox.com/oauth2/authorize?token_access_type=offline&response_type=code&client_id=<App key\>
 
 Use the received code in below command:
 
