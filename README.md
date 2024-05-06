@@ -1,5 +1,9 @@
 # Odoo database and filestore backup with Dropbox
 
+## Install Dropbox
+
+[Official Documentation](https://www.dropbox.com/developers/documentation/python#install)
+
 ## For Odoo deployments through Docker, clone repository with root user in Ubuntu server
 
 > sudo su
