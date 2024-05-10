@@ -5,7 +5,7 @@ import os
 import requests
 import sys
 
-from dropbox.exceptions import ApiError
+from dropbox.exceptions import ApiError, AuthError
 
 old = sys.argv[1]
 new = sys.argv[2]
@@ -36,6 +36,11 @@ with open(new, 'rb') as f:
         commit = dropbox.files.CommitInfo(path='/' + new)
 
         while f.tell() < file_size:
+            try:
+                dbx.check_user()
+            except AuthError:
+                res = requests.post('https://api.dropbox.com/oauth2/token?grant_type=refresh_token&refresh_token=%s&client_id=%s&client_secret=%s' % (refresh_token, client_id, client_secret))
+                dbx = dropbox.Dropbox(res.json()['access_token'])
             if ((file_size - f.tell()) <= CHUNK_SIZE):
                 print(dbx.files_upload_session_finish(f.read(CHUNK_SIZE),
                                                 cursor,
